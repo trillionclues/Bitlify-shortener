@@ -5,8 +5,8 @@ import LinkResult from './Components/LinkResult'
 import Test from './Components/Test'
 
 function App() {
-  const [inputValue, setInputValue] = useState('')
-
+  const [inputValue, setInputValue] = useState([])
+  console.log(inputValue)
   return (
     <div className='container'>
       <BitlyShort setInputValue={setInputValue} />

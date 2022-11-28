@@ -4,8 +4,8 @@ function BitlyShort({ setInputValue }) {
   const [value, setValue] = useState('')
 
   const handleClick = () => {
-    setInputValue(value)
-    setValue('')
+    setInputValue((arr) => [...arr, value])
+    setValue([])
   }
 
   return (

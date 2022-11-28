@@ -523,7 +523,7 @@ batch-processor@1.0.0:
   resolved "https://registry.yarnpkg.com/batch-processor/-/batch-processor-1.0.0.tgz#75c95c32b748e0850d10c2b168f6bdbe9891ace8"
   integrity sha512-xoLQD8gmmR32MeuBHgH0Tzd5PuSZx71ZsbhVxOCRbgktZEPe4SQy7s9Z50uPp0F/f7iw2XmkHN2xkgbMfckMDA==
 
-bitly@^7.1.0:
+bitly@^7.1.0, bitly@^7.1.2:
   version "7.1.2"
   resolved "https://registry.yarnpkg.com/bitly/-/bitly-7.1.2.tgz#157e30d3017d8f368e099e515f09020ab7999031"
   integrity sha512-DWjsnJ7vaQ6PbTZtuYXwDFeJQfqoN7GIbALo6vVfrPc2tp1jWPzn9QVZI1OxwDK6kSwfg5lTvsYu6yvg+3HSUw==
@@ -1379,6 +1379,13 @@ shallowequal@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/shallowequal/-/shallowequal-1.1.0.tgz#188d521de95b9087404fd4dcb68b13df0ae4e7f8"
   integrity sha512-y0m1JoUZSlPAjXVtPPW70aZWfIL/dSP7AFkRnniLCrK/8MDKog3TySTBmckD+RObVxH0v4Tox67+F14PdED2oQ==
+
+shortmyurl@^1.0.16, shortmyurl@^1.0.2:
+  version "1.0.16"
+  resolved "https://registry.yarnpkg.com/shortmyurl/-/shortmyurl-1.0.16.tgz#aebd2d3b92a1c1e656f58c136425e93a06a2bb7b"
+  integrity sha512-z7xQH0LbH4T+BTGTykhqHRlqwESvfF2tM0oZ9GE/RwMBuIi9biPxIzOSwoJ203Av6GVy3W8NxQw2aX2/45JBng==
+  dependencies:
+    shortmyurl "^1.0.2"
 
 source-map-js@^1.0.2:
   version "1.0.2"

@@ -6,7 +6,6 @@ import axios from 'axios'
 
 function LinkResult({ inputValue }) {
   const [shortLink, setShortLink] = useState([])
-  console.log(shortLink)
   const [copied, setCopied] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState(false)
@@ -18,7 +17,7 @@ function LinkResult({ inputValue }) {
       const resp = await axios(
         `https://api.shrtco.de/v2/shorten?url=${inputValue}`
       )
-      setShortLink(resp.data.result.full_short_link)
+      setShortLink([...shortLink, resp.data.result.full_short_link])
     } catch (err) {
       setError(error)
     } finally {
@@ -29,6 +28,7 @@ function LinkResult({ inputValue }) {
   useEffect(() => {
     if (inputValue.length) {
       fetchInput()
+      // setShortLink([...shortLink])
     }
   }, [inputValue])
 
@@ -55,14 +55,39 @@ function LinkResult({ inputValue }) {
         <div className='linkresult '>
           <p>Previous links</p>
           <div className='previousLinks'>
-            <div>{inputValue && inputValue}</div>
+            <div>
+              {inputValue.map((input) => (
+                <h4>{input}</h4>
+              ))}
+              {/* {inputValue && inputValue} */}
+            </div>
             <div className='shortlink'>
-              <p>{shortLink}</p>
-              <CopyToClipboard text={shortLink} onCopy={() => setCopied(true)}>
+              <div>
+                {shortLink.map((link, index) => (
+                  <div className='rowResult'>
+                    <CopyToClipboard text={link} onCopy={() => setCopied(true)}>
+                      <p className={copied ? 'copied' : ''}>{link}</p>
+                    </CopyToClipboard>
+
+                    {/* <div>
+                      <CopyToClipboard
+                        text={link}
+                        onCopy={() => setCopied(true)}
+                      >
+                        <button className={copied ? 'copied' : ''}>
+                          <FaRegCopy size='20px' color='white' />
+                        </button>
+                      </CopyToClipboard>
+                    </div> */}
+                  </div>
+                ))}
+              </div>
+
+              {/* <CopyToClipboard text={shortLink} onCopy={() => setCopied(true)}>
                 <button className={copied ? 'copied' : ''}>
                   <FaRegCopy size='20px' color='white' />
                 </button>
-              </CopyToClipboard>
+              </CopyToClipboard> */}
             </div>
           </div>
         </div>

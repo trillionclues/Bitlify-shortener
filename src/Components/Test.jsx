@@ -1,17 +1,14 @@
 import React from 'react'
 import { useShortenUrl } from 'react-shorten-url'
+import shortener from 'shortmyurl'
 
 function Test() {
-  const { loading, error, data } = useShortenUrl('http://example.com/this')
-  console.log(data)
-  console.log(loading)
-  console.log(error)
+  async function shortenUrl() {
+    const shortenedUrl = await shortener('https://www.google.com')
+  }
 
-  if (loading) return <p>Loading...</p>
-
-  if (error) return <p>Something went wrong</p>
-
-  // return <h1>{data.link}</h1>
+  shortenUrl()
+  return <h1> {shortenedUrl} </h1>
 }
 
 export default Test
